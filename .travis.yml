@@ -9,6 +9,9 @@ before_install:
   - curl ${CHROME_URL}/${CHROME_REV}/chrome-linux.zip --create-dirs -o out/chrome-linux.zip
   - unzip out/chrome-linux.zip -d out
   - export CHROME_CANARY_BIN=$PWD/out/chrome-linux/chrome
+  - google-chrome --version
+  - chromium-browser --version
+  - export CHROME_BIN=google-chrome
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 before_script:

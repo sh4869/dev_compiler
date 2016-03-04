@@ -405,6 +405,9 @@ abstract class AbstractCompiler {
       }
       _inputBaseDir = common == null ? '' : path.joinAll(common);
     }
+    if (Platform.isWindows && _inputBaseDir.startsWith("/")) {
+      _inputBaseDir = _inputBaseDir.substring(1);
+    }
     return _inputBaseDir;
   }
 
